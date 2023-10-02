@@ -12,10 +12,17 @@ body {
   a {
     color: #03345A;
   }
-  
+
   .top {
-    background-color:#03345A;
+    background-color:#f49c18;
   }
+
+
+  th {
+    text-transform:uppercase;
+  }
+  
+ 
 
   ::selection {
     background-color: #03345A;
@@ -23,8 +30,14 @@ body {
   
   em {
     color:#10768D;
+    background-color: rgb(23, 203, 239);
+
   }
   
+  #the_most_important {
+    text-transform:uppercase;
+    background-color: gold;
+  }
   
   h2 {
     border-bottom:1px solid #011342;

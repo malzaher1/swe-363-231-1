@@ -22,11 +22,6 @@ body {
     text-transform:uppercase;
   }
   
- 
-
-  ::selection {
-    background-color: #03345A;
-  }
   
   em {
     color:#10768D;
@@ -40,12 +35,22 @@ body {
   }
   
   h2 {
+    font-family:sans-serif;
     border-bottom:1px solid #011342;
   }
   
+
+  h2+p:first-letter {
+    font-size:x-large;
+  }
   
   th,td{
     padding:4px;
+  }
+
+
+  tbody tr:hover, tbody tr:hover td{
+    background-color:#10768D;
   }
   
   table, th, td{
@@ -53,42 +58,57 @@ body {
       border-collapse:collapse;
   }
   
-  tbody tr:hover, tbody tr:hover td{
-    background-color:#10768D;
-  }
+
   
   header {
-    background-color: #879499;
+    text-transform:uppercase;
+    background-color: #89959a;
     padding: 40px;
     color:white;
   }
-  
+
+
+
   ul {
-    padding:0px;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
   }
   
+  
+ 
   nav li {
-    display:inline;
     margin-left: 8px;
+    display:inline;
+    
+  }
+
+  nav ul li:first-child {
+    color:#011342;
+    text-decoration:underline;
+
   }
   
-  nav ul li:first-child {
-    text-decoration:underline;
-    color:#011342;
+
+  ::selection {
+    background-color: green;
   }
+
+
+  a:hover {
+    cursor:pointer;
+    color: white;
+
+  }
+
+  tbody tr:nth-child(odd){
+    background-color: #89959a;
+  }
+
   
   nav ul li:first-child a{
     text-decoration:underline;
     color:#011342;
-  }
-  
-  tbody tr:nth-child(odd){
-    background-color: #879499;
-  }
-  
-  
-  a:hover {
-    cursor:pointer;
   }
   
   input {
@@ -96,10 +116,9 @@ body {
   }
   
   input:not([type="submit"]){
-    border: 2px solid gray;
+    border: 2px solid lightgray;
   }
   
   input[name="message"]{
     height:50px;
   }
-  

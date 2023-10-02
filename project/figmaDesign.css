@@ -102,9 +102,6 @@ h2{
 }
 
 
-
-
-
 ul {
     padding-left: 0px;
 }
@@ -127,6 +124,33 @@ footer a {
     text-decoration: none;
     color: #1A1A1A;
 }
+
+#loading {
+    background: url("loading.gif") no-repeat center center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  
+  to {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
+  
+
+
+  
 
 
 /* Mobile  */

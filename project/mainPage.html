@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="darkTheme.css"/>
+
+  <!-- Dark Theme -->
+    <link rel="stylesheet" href="arkTheme.css"/>
+
+
+    <!--MOOD BOARD-->
+    <link rel="stylesheet" href="websiteStyle.css"/>
 
     <title>Mohammed Alzaher Blog</title>
 
@@ -18,16 +24,71 @@
 
     <!-- Cover Image-->
     <div>
-        <p><img src = "Cover image.jpg" width = "1400" height = "450"
+        <p><img src = "Cover image.jpg" width = "1200" height = "350"
         alt = "Cover photo"></p>
     <div>
 
+
+
+      <header>
+        <h1>Mohammed Alzaher Blog</h1>
+        <nav>
+          <ul>
+            <li>
+              <a>Home</a>
+            </li>
+            <li>
+              <a>About</a>
+            </li>
+            <li>
+              <a>Contact</a>
+            </li>
+            <li>
+              <a href="signUp.html">Sign Up</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+   
+
       
-    <h1> Mohammed Alzaher Blog </h1>
+    <section>
+      <h2>Description</h2>
+      <p>Share my  <em>personal blogs</em> to discuss many topics and aspects.</p>
+  </section>
 
-    <p> Share my personal blogs to discuss many topics and aspects </p>
 
 
+
+  <section>
+    <h2>Popular Topics</h2>
+    <p>Most recent</p>
+    <div class="product">
+        <h3>Topic: How did Appolo 11 landed on the moon?</h3>
+        <p>Some description here</p>
+        <a href="#">Show Details</a>
+    </div>
+    <div class="product">
+        <h3>Topic: The islamic culture 500 years ago</h3>
+        <p>Some description here</p>
+        <a href="#">Show Details</a>
+    </div>
+    <div class="product">
+        <h3>Topic: What is the time puzzle? </h3>
+        <p>Some description here</p>
+        <a href="#">Show Details</a>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section>
+  <h2>Most popular topics in my blog</h2>
+  <p> Main topics Can change from time to time </p>
 
 
      <!-- Table  -->
@@ -71,23 +132,43 @@
               <td></td>
               <td>4</td>
             </tr>
-            <caption>List of popular topics</caption>
+            <caption>List of popular topics in my blog</caption>
           </tfoot>
         </tbody>
 
       </table>
+</section>
+
+
+
+<section>
+  <h2> Send Feedback</h2>
+  <p> Fill the following</p>
+  <form>
+    <div><label for="name">Name:<br/> <input type="text" name="name"></label></div>
+    <div>
+      <label for="email">Email:<br/> <input type="email" name="email"></label>
+    </div>
+    <div>
+      <label>Message:<br/><input type="text" name="message"></label>
+    </div>
+    <input type="submit" value="Send Feedback">
+  </form>
+</section>
+
 
 
     <!-- End page footer -->
       <footer><br>
         <nav class="topnav">
-            <!-- Sign up link -->
-            <a href="signUp.html">Sign Up</a>
+
 
             <!-- Contact me -->
             <a href="mailto:mohammed1@gmail.com">Contact me</a>
 
         </nav>
+
+        <p>&copy; 2023 Personal blog. All rights reserved.</p>
       </footer>
     
 </body>

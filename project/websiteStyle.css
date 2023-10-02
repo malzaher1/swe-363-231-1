@@ -1,0 +1,92 @@
+body {
+    font-family:monospace;
+    color:#011342;
+  }
+  
+  
+  p {
+    color:black;
+  }
+  
+  
+  a {
+    color: #03345A;
+  }
+  
+  .top {
+    background-color:#03345A;
+  }
+
+  ::selection {
+    background-color: #03345A;
+  }
+  
+  em {
+    color:#10768D;
+  }
+  
+  
+  h2 {
+    border-bottom:1px solid #011342;
+  }
+  
+  
+  th,td{
+    padding:4px;
+  }
+  
+  table, th, td{
+      border: 1px solid #011342;
+      border-collapse:collapse;
+  }
+  
+  tbody tr:hover, tbody tr:hover td{
+    background-color:#10768D;
+  }
+  
+  header {
+    background-color: #879499;
+    padding: 40px;
+    color:white;
+  }
+  
+  ul {
+    padding:0px;
+  }
+  
+  nav li {
+    display:inline;
+    margin-left: 8px;
+  }
+  
+  nav ul li:first-child {
+    text-decoration:underline;
+    color:#011342;
+  }
+  
+  nav ul li:first-child a{
+    text-decoration:underline;
+    color:#011342;
+  }
+  
+  tbody tr:nth-child(odd){
+    background-color: #879499;
+  }
+  
+  
+  a:hover {
+    cursor:pointer;
+  }
+  
+  input {
+    height:30px;
+  }
+  
+  input:not([type="submit"]){
+    border: 2px solid gray;
+  }
+  
+  input[name="message"]{
+    height:50px;
+  }
+  

@@ -1,0 +1,36 @@
+
+
+
+
+
+           /* PC */
+@media screen and (max-width:769px) {
+    body{
+        padding-top: 0px;
+    }
+    nav {
+        padding-right: 0px;
+    }
+    nav ul{
+        float: left;
+    }
+    nav li {
+        display: none;
+    }
+    nav img {
+        display: none;
+    }
+    .blog-post.h {
+        display: flex;
+    }
+    .blog-post.h img {
+        display: flex;
+    }
+    .date{
+        float: none;
+    }
+    .all {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}

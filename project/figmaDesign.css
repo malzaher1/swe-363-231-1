@@ -150,48 +150,42 @@ footer a {
   
 
 
-  
 
 
-/* Mobile  */
 
-@media screen and (min-width:834px) {
-    
+
+
+
+
+           /* Phone */
+@media screen and (max-width:420px) {
     body{
         padding-top: 0px;
     }
-
     nav {
         padding-right: 10px;
     }
-
     nav ul{
         float: center;
     }
-    
     nav li {
         display: inline-block;
         margin: 0px 4px;
     }
-
     nav img {
         display: none;
     }
-
     .blog-post.h {
         display: flex;
     }
-
     .blog-post.h img {
         display: flex;
         max-width: 320px;
         margin-right: 16px;
     }
-
     .date{
         float: none;
     }
-
     .all {
         display: grid;
         grid-template-columns: auto auto;

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe </title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .cell {
+            font-family: sans-serif;
+            font-size: larger;
+            font-weight: bolder;
+            background-color: beige;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .cell.X {
+            background-color: lightblue;
+        }
+
+        .cell.O {
+            background-color: lightgreen;
+        }
+
+        .cell:hover {
+            background-color: blanchedalmond;
+        }
+
+        .row {
+            display: flex;
+        }
+
+
+
+        
+    </style>
+</head>
+
+<body>
+    <h1 id="turn">
+        Now it's is <span>X</span> turn
+    </h1>
+    <!-- Board -->
+    <div class="board">
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="row">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+
+        <form id="bottomBar">
+            <!-- Reset button-->
+            <input type="reset" value="Reset Game" id="reset">
+
+        </form>
+
+        <script>
+
+            const winningPatterns = [
+                [0, 1, 2], // first row
+                [3, 4, 5], // second row
+                [6, 7, 8], // third row
+                [0, 3, 6], // first column
+                [1, 4, 7], // second column
+                [2, 5, 8], // third column
+                [0, 4, 8], // first diagonal
+                [2, 4, 6], // second diagonal
+                ];   
+
+                // decided which turn is it
+                let turn = "X"
+                let gameEnded = false  
+
+                let cells = document.getElementsByClassName("cell");
+
+            function checkWinner() {
+                // Get all the cells
+                let cells = document.getElementsByClassName("cell");
+
+                for (let pattern of winningPatterns) {
+                    // Get the values of the cells in the pattern
+                    let a = cells[pattern[0]].innerText;
+                    let b = cells[pattern[1]].innerText;
+                    let c = cells[pattern[2]].innerText;
+
+                    // If the values are not empty and are equal, then we have a winner
+                    if (a && a === b && b === c) {
+                    // Set the gameEnded flag to true
+                    gameEnded = true;
+
+                    // Return the winner
+                    return a;
+                    }
+                }
+
+                // If no winner
+                return null;
+                }       
+
+
+            // when we click on a cell add the letter 
+            let board = document.getElementsByClassName("board")[0]
+            board.addEventListener("click", cellClicked)
+
+            
+
+            function cellClicked(event) {
+                let cell = event.target
+                cell.innerText = turn
+
+
+                // change the cell color
+                cell.classList.add(turn)
+
+            
+                let winner = checkWinner();
+                let header = document.getElementById("turn");
+
+
+                if (winner) {
+                    header.innerText = `The winner is ${winner}!`;
+
+                } 
+
+                else if (isBoardFull()) { 
+                    header.innerText = "Draw!"; 
+                }
+                
+                else {
+                    // change turn
+                    turn = turn === "X" ? "O" : "X"
+
+                    //change title
+                    turnLetter = document.querySelector("#turn span")
+                    turnLetter.innerText = turn
+
+                }
+            }
+
+            // If draw
+            function isBoardFull() {
+                for (let cell of cells) { 
+                    if (cell.innerText === "") { 
+                    return false; // the board is not full
+                    }
+                }
+                return true; // the board is full
+                }
+
+
+
+            // Reset function
+            let reset = document.getElementById("reset"); 
+
+            reset.addEventListener("click", function() { 
+                let cells = document.getElementsByClassName("cell"); 
+                for (let cell of cells) { 
+                    cell.innerText = ""; 
+                    cell.classList.remove("X", "O"); 
+                }
+
+                let header = document.getElementById("turn");
+
+                turn = "X"
+                header.innerText = `Now it's is ${turn} turn`; // update the header text
+                winner=null
+                gameEnded = false; // reset the gameEnded to false
+                });
+
+        </script>
+    </div>
+</body>
+
+</html>

@@ -2,11 +2,11 @@
 
 
 
-
            /* PC */
 @media screen and (max-width:769px) {
     body{
         padding-top: 0px;
+        
     }
     nav {
         padding-right: 0px;

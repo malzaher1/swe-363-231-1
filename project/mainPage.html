@@ -79,8 +79,8 @@
 
 
   <main>
-    <h2>Popular Topics</h2>
-    <div class="blog-post">
+    <!-- <h2>Popular Topics</h2> -->
+    <!-- <div class="blog-post">
     <img src="https://picsum.photos/id/8/367/267" alt="Sample Image">
     <div class="date">Thursday, 26 Sep 2023</div>
 
@@ -130,14 +130,16 @@
                   <a>Science Fiction </a>
               </li>
           </ul>
-        </div>
+        </div> -->
 
 
 
-        <h2>All Blog Posts</h2>
+        <!-- <h2>All Blog Posts</h2> -->
+  
 
 
 
+<!-- 
         <div class="blog-post">
           <img src="https://picsum.photos/id/24/367/267" alt="Sample Image">
           <div class="date">Tuesday, 24 Sep 2023</div>
@@ -156,21 +158,24 @@
                     <a>Physics</a>
                 </li>
             </ul>
-          </div>
+          </div> -->
   
         <!-- Add more blog posts here -->
 
-        <div class="pagination">
-            <!-- Add numbered navigation here -->
+        <!-- <div class="pagination">
+
             <span>1</span>
             <a href="#">2</a>
             <a href="#">3</a>
-        </div>
+        </div> -->
+
   </main>
 
 
 
+  <div id="posts-container">
 
+  </div>
 
 
 
@@ -261,6 +266,90 @@
 
         <p>&copy; 2023 Personal blog. All rights reserved.</p>
       </footer>
-    
+
+
+      <script src="script.js">
+        // Select the posts container element
+        let postsContainer = document.querySelector("#posts-container");
+
+        // Loop through the list of posts
+        for (let post of posts) {
+          // Create a new div element for each post
+          let postDiv = document.createElement("div");
+          // Add a class name to the post div
+          postDiv.className = "blog-post";
+
+          // Create an image element for the post image
+          let postImage = document.createElement("img");
+          // Set the src attribute to the image url
+          postImage.src = post.src;
+          // Set the alt attribute to the post title
+          postImage.alt = post.title;
+          // Append the image element to the post div
+          postDiv.appendChild(postImage);
+
+          // Create a div element for the post date
+          let postDate = document.createElement("div");
+          // Add a class name to the date div
+          postDate.className = "date";
+          // Set the text content to the formatted date
+          postDate.textContent = post.date.toLocaleDateString();
+          // Append the date element to the post div
+          postDiv.appendChild(postDate);
+
+          // Create a h3 element for the post title
+          let postTitle = document.createElement("h3");
+          // Set the text content to the post title
+          postTitle.textContent = "Topic: " + post.title;
+          // Append the title element to the post div
+          postDiv.appendChild(postTitle);
+
+          // Create a p element for the post brief
+          let postBrief = document.createElement("p");
+          // Set the text content to the post brief
+          postBrief.textContent = post.brief;
+          // Append the brief element to the post div
+          postDiv.appendChild(postBrief);
+
+          // Create a a element for the post link
+          let postLink = document.createElement("a");
+          // Set the href attribute to the post link
+          postLink.href = post.link;
+          // Set the text content to "Read more"
+          postLink.textContent = "Read more";
+          // Append the link element to the post div
+          postDiv.appendChild(postLink);
+
+          // Create a ul element for the post tags
+          let postTags = document.createElement("ul");
+          // Add a class name to the tag list
+          postTags.className = "tags";
+          // Loop through the list of tags
+          for (let tag of post.tags) {
+            // Create a li element for each tag
+            let tagItem = document.createElement("li");
+            // Create a a element for each tag
+            let tagLink = document.createElement("a");
+            // Set the text content to the tag
+            tagLink.textContent = tag;
+            // Append the tag link to the tag item
+            tagItem.appendChild(tagLink);
+            // Append the tag item to the tag list
+            postTags.appendChild(tagItem);
+          }
+          // Append the tag list to the post div
+          postDiv.appendChild(postTags);
+
+          // Append the post div to the posts container
+          postsContainer.appendChild(postDiv);
+        }
+
+
+
+
+
+      </script>
+
+
 </body>
 </html>

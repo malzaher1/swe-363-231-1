@@ -79,6 +79,8 @@
 
         </form>
 
+
+
         <script>
 
             const winningPatterns = [
@@ -141,6 +143,8 @@
                 let winner = checkWinner();
                 let header = document.getElementById("turn");
 
+                
+
 
                 if (winner) {
                     header.innerText = `The winner is ${winner}!`;
@@ -161,6 +165,49 @@
                     turnLetter.innerText = turn
 
                 }
+
+                //Keyboard
+                document.addEventListener("keydown", (e) => {
+                    e.preventDefault()
+                    if (e.code !== "Space"){
+                        moveSelected(e.code);
+                    }else{
+                        cell = document.querySelector(".selected")
+                        addLetter(cell)
+                    }
+                })
+
+            }
+
+            // Keyboard
+            function moveSelected(code) {
+
+                console.log(code)
+
+                //get current selected
+                current = document.querySelector(".selected")
+                next = null
+
+                switch (code) {
+                    case "ArrowRight":
+                        next = current.nextElementSibling
+                        break;
+                    case "ArrowLeft":
+                        next = current.previousElementSibling
+                        break;
+                    case "ArrowDown":
+                        next = current.nextElementSibling.nextElementSibling.nextElementSibling
+                        break;
+                    case "ArrowUp":
+                        next = current.previousElementSibling.previousElementSibling.previousElementSibling
+                        break;
+                }
+                      //replace class
+                      if (next != null) {
+                    current.classList.remove("selected")
+                    next.classList.add("selected")
+                }
+
             }
 
             // If draw

@@ -1,4 +1,6 @@
 class Event {
+
+    
     constructor(jsonEvent){
         // parse the ddescription .. 
         this.title = jsonEvent.title 

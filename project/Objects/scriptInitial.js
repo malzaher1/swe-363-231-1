@@ -1,4 +1,6 @@
 //fetch data from the api
+
+
 async function getEvents() {
     const res = await fetch("https://faaliat.sa/ar/events_api/year-events")
     const data = await res.json()
